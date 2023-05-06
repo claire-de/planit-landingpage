@@ -2,6 +2,7 @@
 
 /*for mobile*/
 @media (max-width: 560px){
+    * {font-family: ‘SUIT Variable’, sans-serif;}
     #hoverable2{
         display: none;
     }
@@ -11,6 +12,7 @@
 }
 
 @media (max-width: 720px){
+    * {font-family: ‘SUIT Variable’, sans-serif;}
     .white-text{
         font-size: 48px;
     }
@@ -20,6 +22,7 @@
 }
 
 @media only screen and (min-width: 560px) {
+    * {font-family: ‘SUIT Variable’, sans-serif;}
     #hoverable3 {
       display: none;
     }
