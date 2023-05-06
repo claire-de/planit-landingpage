@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/index.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+    <title>HOME</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPD1JJXN5X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DPD1JJXN5X');
+    </script>
+</head>
+<body>
+    <header>
+        <div class = "header-left">
+            <img class = "planit-logo" src="assets/img/logo.png">
+        </div>
+        <div class = "header-right">
+            <a class = "header-list" id="hoverable1">KOR</a>
+            <a class = "header-list" id="hoverable2" href="mailto:planit.timer@gmail.com"> CONTACT </a>
+            <a class = "header-list" id="hoverable3" href="#" onclick="redirectToAppStore()"> DOWNLOAD </a>
+            <div>
+              <img class = "header-list" id = "hidden-menu" src = "assets/img/icon_subjectadd.png">
+            </div>
+        </div>
+    </header>
+    <div class = "section1">
+      <div class = "hero">
+        <div class = "hero-top">
+          <div class = "hero-text"> 
+            <p class = "white-text">돈 버는 공부타이머 </p>
+            <p class = "white-text">플래닛</p>
+          </div>
+        </div>
+        <div class = "hero-cta">
+          <div class = "cta-wrapper">
+            <a class = "cta" href = "https://apps.apple.com/kr/app/%ED%94%8C%EB%9E%98%EB%8B%9B-%EB%8F%88-%EB%B2%84%EB%8A%94-%EA%B3%B5%EB%B6%80%ED%83%80%EC%9D%B4%EB%A8%B8/id1597905981" target = "_blank"> 
+              <div class = "cta-button" id = "applestore">
+                <img id = "applestore-logo" src ="assets/img/Apple.png">
+                <p>앱 스토어</p>
+              </div>
+            </a>
+            <a class = "cta" href = "https://play.google.com/store/apps/details?id=com.ctu.planitstudy" target = "_blank">
+              <div class = "cta-button" id = "playstore">
+                <img id = "playstore-logo" src ="assets/img/GooglePlayStore_bw.png">
+                <p>구글 플레이</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "section2">
+      <div class = "title">
+        <p class = "line">눈이 편안한 다크모드 우주 디자인과,</p> 
+        <p class = "line">목표 시간을 채우면 뜨는 영롱한 보름달이 포인트!</p>
+      </div>
+      <div class = "phone-mockup-wrapper">
+        <img class = "phone-mockup" src = "assets/img/MockUp_noshadow.png">
+        <img class = "home1" src="assets/img/홈.png">
+        <div class = "slide-wrapper">
+          <img class = "slide1" src = "assets/img/slide.png" alt="Your Image">
+          <img class = "slide2" src = "assets/img/slide.png" alt="Your Image">
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+</body>
+<script>
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.top = e.clientY + 'px';
+  cursor.style.left = e.clientX + 'px';
+});
+
+const headerLists = document.querySelectorAll('.header-list');
+headerLists.forEach((headerList) => {
+  headerList.addEventListener('mouseenter', () => {
+    cursor.style.width = '60px';
+    cursor.style.height = '60px';
+  });
+
+  headerList.addEventListener('mouseleave', () => {
+    cursor.style.width = '20px';
+    cursor.style.height = '20px';
+  });
+});
+
+const buttons = document.querySelectorAll('.cta-button');
+buttons.forEach((headerList) => {
+  headerList.addEventListener('mouseenter', () => {
+    cursor.style.width = '0px';
+    cursor.style.height = '0px';
+  });
+
+  headerList.addEventListener('mouseleave', () => {
+    cursor.style.width = '20px';
+    cursor.style.height = '20px';
+  });
+});
+
+function redirectToAppStore() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Check if user is using an iOS device
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    window.location.href = 'https://apps.apple.com/kr/app/%ED%94%8C%EB%9E%98%EB%8B%9B-%EB%8F%88-%EB%B2%84%EB%8A%94-%EA%B3%B5%EB%B6%80%ED%83%80%EC%9D%B4%EB%A8%B8/id1597905981';
+  } 
+  // Check if user is using an Android device
+  else if (/android/i.test(userAgent)) {
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.ctu.planitstudy';
+  }
+  // If user is not using an iOS or Android device, show an error message
+  else {
+    alert('Sorry, our app is currently only available for iOS and Android devices.');
+  }
+
+}
+</script>
+</html>

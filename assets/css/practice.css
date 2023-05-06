@@ -1,0 +1,53 @@
+body {
+    height: 100vh;
+    background: #010101;
+    cursor: none;
+    margin: 0;
+    display: flex;
+    font-family: monospace;
+}   
+body h1, p {
+    color: #fff;
+}
+    
+body a {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding: 10px 0;
+    margin-top: 25px;
+}
+    
+.cursor {
+    pointer-events: none;
+} 
+.cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 100;
+}
+.cursor circle {
+    fill: #f7f8fa;
+}
+    
+.left, .right {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    
+.right {
+    background: #fff;
+}
+.right a {
+    color: #000000;
+    border-bottom: 2px solid #000;
+}
+      
+.right h1, p {
+    color: #000;
+}
